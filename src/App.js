@@ -6,36 +6,35 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
+      items: {},
       isLoaded: false,
     }
   }
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://nepalcorona.info/api/v1/data/nepal')
     .then(res => res.json())
-    .then(json => {
+    .then(raj => {
       this.setState({
         isLoaded: true,
-        items: json,
+        items: raj,
       })
     });
+    
   }
 
   render(){
     var {isLoaded, items} = this.state;
+    console.log(this.state.items);
+  
     if(!isLoaded) {
       return <div>Loading...</div>;
     }
     else{
       return (
       <div className="App">
-       <ul>
-          {items.map(item => (
-              <li key={item.id}>
-                  Name: {item.name} | Email: {item.email}
-              </li>
-              ))};
-        </ul>
+        Corona Virus Tested Positive in Nepal: {items.tested_positive}
+        Corona Virus Tested Negative in Nepal: {items.tested_negative}
+ 
       </div>
     );
     }
