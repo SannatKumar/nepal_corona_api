@@ -20,6 +20,7 @@ class App extends React.Component {
       })
     });
   }
+
   render(){
     var {isLoaded, items} = this.state;
     if(!isLoaded) {
@@ -38,9 +39,7 @@ class App extends React.Component {
       </div>
     );
     }
-
   }
-  
-}
+ }
 
 export default App;
