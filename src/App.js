@@ -32,8 +32,16 @@ class App extends React.Component {
     else{
       return (
       <div className="App">
-        Corona Virus Tested Positive in Nepal: {items.tested_positive}
-        Corona Virus Tested Negative in Nepal: {items.tested_negative}
+
+        <li>Corona Virus Tested Positive in Nepal: {items.tested_positive}</li>
+        <li>Corona Virus Tested Negative in Nepal: {items.tested_negative}</li>
+        <li>Total Total: {items.tested_total}</li>
+        <li>Corona Virus in Isolation in Nepal: {items.quarantined}</li>
+        <li>Corona Virus Quarantined In Nepal: {items.tested_rdt}</li>
+        <li>Total tested RDT: {items.quarantined}</li>
+        <li>Corona Virus Pending Result: {items.pending_result}</li>
+        <li>Corona Virus Recovered: {items.recovered}</li>
+        <li>Corona Virus Deaths: {items.deaths}</li>
  
       </div>
     );
